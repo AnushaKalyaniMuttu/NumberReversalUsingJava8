@@ -1,0 +1,20 @@
+package com.bean;
+
+import java.util.stream.IntStream;
+
+public class Test {
+    
+
+		    public static void main(String[] args) {
+		    	int number = 12345;
+		        
+		        int reversedNumber = IntStream.iterate(number, n -> n / 10)
+		               .limit(String.valueOf(number).length())
+		                .map(n -> n % 10)
+		                .reduce(0, (result, digit) -> result * 10 + digit);
+		        
+		        System.out.println(reversedNumber);
+		}
+	
+	
+}
